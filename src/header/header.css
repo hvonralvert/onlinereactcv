@@ -3,7 +3,9 @@
     justify-content: space-between;
     height: 130px;
     width: 100%;
-    background-color: green;
+    background-color: #5da0ff;
+    background: linear-gradient(to bottom, #5da0ff 0%,  #3a65ff 100%);
+
 }
 
 .Me-container {
@@ -32,10 +34,11 @@
     cursor: pointer;
     height:fit-content;
     color:white;
+    text-decoration: none;
 }
 
 .button:hover{
-    color:gray;
+    color:rgb(200, 200, 200);
 }
 
 .active{
