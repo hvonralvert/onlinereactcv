@@ -1,26 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Header from './header/header'
+import Me from './router/pages/me';
+import Chatt from './router/pages/chatt';
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 class App extends Component {
+
+  constructor(){
+    super();
+
+    this.state={
+      HeaderButtons:[
+        {
+          Active:true,
+          Text:'Mig',
+          Link:'/'
+        },
+        {
+          Active:false,
+          Text:'Chatt',
+          Link:'/chatt'
+        },
+        {
+          Active:false,
+          Text:'Om'
+        }
+      ]
+    }
+  }
+
   render() {
+    const HeaderButtons=this.state.HeaderButtons;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="AppContainer">
+        <Header HeaderButtons={HeaderButtons}></Header>
+        <Route exact path="/" component={Me} />
+        <Route exact path="/Chatt" component={Chatt} />
+        </div>
+      </Router>
+
     );
   }
 }
