@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import InfoBox from '.././../../components/infobox/infobox';
+import InfoBox from '../../../components/infobox/infobox';
 
-class FrontEnd extends Component {
+class FrontEndPage extends Component {
 
     constructor(){
         super();
@@ -23,9 +23,9 @@ class FrontEnd extends Component {
 
         return (
             <div className="page-container">
-                <InfoBox infoData={history}></InfoBox>
+                <InfoBox BoxData={history}></InfoBox>
             </div>
         )
     }
 }
-export default FrontEnd
+export default FrontEndPage

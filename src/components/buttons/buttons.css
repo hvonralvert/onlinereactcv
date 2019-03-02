@@ -1,0 +1,27 @@
+.button-container{
+    border-radius: 7px;
+    padding:7px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.delete{
+    background-color: red;
+    color:white;
+}
+
+.delete:hover{
+    background-color: rgb(255, 52, 86);
+    color:white;
+}
+
+.standard{
+    background-color: rgb(75, 117, 255);
+    color:white;
+}
+
+.standard:hover{
+    background-color: rgb(109, 143, 255);
+}

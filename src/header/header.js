@@ -29,11 +29,14 @@ class Header extends Component {
         const HeaderButtons=this.props.HeaderButtons;
         const GoToPage=this.props.GoToPage;
 
+        const openLogin=this.props.openLogin;
+
         return (
-            <div className="Header">
-            <div className="Me-container">
-            <img alt="test" className="Me" src="./assets/mig.jpg"></img>
-            </div>            
+            <div className="HeaderComponent">
+                <div  onClick={()=>openLogin()} className="Me-container">
+                    <img alt="test" className="Me" src="./assets/mig.jpg"></img>
+                </div>     
+
                 <this.Buttons GoToPage={GoToPage} HeaderButtons={HeaderButtons}></this.Buttons>
             </div>            
         )

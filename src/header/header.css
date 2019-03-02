@@ -1,4 +1,5 @@
-.Header {
+
+.HeaderComponent {
     display: flex;
     justify-content: space-between;
     height: 130px;
@@ -8,15 +9,34 @@
 
 }
 
+
 .Me-container {
-    padding:3px;
+    margin:3px;
     margin:10px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:fit-content;
+    width:fit-content;
 }
+
+
+.Me-container:hover{
+    background-color: white;
+}
+
 
 .Me {
     height: 100px;
     width: auto;
     border-radius: 50%;
+}
+
+
+.Me:hover{
+    opacity: 0.8;
 }
 
 
@@ -37,9 +57,11 @@
     text-decoration: none;
 }
 
+
 .button:hover{
     color:rgb(200, 200, 200);
 }
+
 
 .active{
     border-bottom:1px solid white;

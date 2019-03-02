@@ -7,12 +7,19 @@
     width:400px;
     overflow: hidden;
     padding:5px;
-    margin-bottom:50px;
+    margin-bottom:50px;    
 }
 
 .infobox-header{
     color:rgb(238, 166, 32);
     font-size:20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.infobox-header > .button-container{
+    margin-left:10px;
 }
 
 .infobox-text{

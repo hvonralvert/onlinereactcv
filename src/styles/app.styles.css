@@ -6,9 +6,17 @@
     width:100%;
     flex:1;
     overflow:auto;
+
+}
+
+.centerPos{
     justify-content: center;
     align-items: center;
 }
 
 
+.endPos{
+    justify-content: flex-end;
+    align-items: flex-end;
+}
 
