@@ -28,7 +28,6 @@ export class ChattFooter extends Component{
 
     inputBlurred(){
         if(this.state.Text===''){
-            console.log('inputBlurred')
             this.setState({
                 ShowSend:false
             })

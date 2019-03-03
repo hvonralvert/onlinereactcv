@@ -5,7 +5,32 @@ import './header.css'
 
 import { Link } from 'react-router-dom';
 
+import db from '../firebase/firestore';
+
 class Header extends Component {
+
+
+    constructor(){
+        super();
+
+        this.state={
+            UserLoggedIn:false
+        }
+
+        this.LogInOrOut=this.LogInOrOut.bind(this);
+        this.handleAuthState=this.handleAuthState.bind(this);
+
+        this.handleAuthState();
+    }
+
+
+    handleAuthState(){
+        db.auth().onAuthStateChanged(user=>{
+            this.setState({
+                UserLoggedIn:user?true:false
+            })
+        })
+    }
 
 
     Buttons(props){
@@ -24,17 +49,29 @@ class Header extends Component {
     }
 
 
+    LogInOrOut(){
+        if(db.auth().currentUser){
+            db.auth().signOut();
+        }else{
+            this.props.openLogin();
+        }
+    }
+
+
     render() {
 
         const HeaderButtons=this.props.HeaderButtons;
         const GoToPage=this.props.GoToPage;
 
-        const openLogin=this.props.openLogin;
+        const LogInOrOut=this.LogInOrOut;
+
+        const UserLoggedIn=this.state.UserLoggedIn;
 
         return (
             <div className="HeaderComponent">
-                <div  onClick={()=>openLogin()} className="Me-container">
-                    <img alt="test" className="Me" src="./assets/mig.jpg"></img>
+                <div  onClick={()=>LogInOrOut()} className="Me-container">
+                    {UserLoggedIn && <img alt="test" className="Me" src="./assets/mig.jpg"></img>}
+                    {!UserLoggedIn && <img alt="test" className="Me" src="./assets/profile.jpg"></img>}
                 </div>     
 
                 <this.Buttons GoToPage={GoToPage} HeaderButtons={HeaderButtons}></this.Buttons>

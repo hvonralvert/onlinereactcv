@@ -3,13 +3,17 @@
     padding:7px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     cursor: pointer;
     font-size: 13px;
 }
 
+
 .delete{
     background-color: red;
     color:white;
+    padding:3px;
+    font-size:10px;
 }
 
 .delete:hover{
@@ -24,4 +28,9 @@
 
 .standard:hover{
     background-color: rgb(109, 143, 255);
+}
+
+.button-disabled{
+    pointer-events: none;
+    opacity: 0.6;
 }

@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import db from '../../firebase/firestore';
 import './chatt.styles.css';
 
 import { ChattHeader } from './chatt.header';
 import { ChattContent } from './chatt.content';
 import { ChattFooter } from './chatt.footer';
+
 
 export class Chatt extends Component{
 
@@ -13,36 +15,33 @@ export class Chatt extends Component{
         this.state={
             Header:'Chatta med henrik',
             InputPlaceholder:'Skriv...',
-            Chatts:[
-                {
-                    Text:'första',
-                    Date:'2019-02-23',
-                    Who:'12kshfds2'
-                },
-                {
-                    Text:'Det var riktigt kul emdsfsdfdfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsf  dsf sdf dsf dsfds fds fdsfdsfdsfsdf sdf sdf dsf dsfd andra ord',
-                    Date:'2019-02-23',
-                    Who:'12kshfds2'
-                },
-                {
-                    Text:'Det var riktigt kul emd andra ord',
-                    Date:'2019-02-23',
-                    Who:'12kshfds2'
-                },
-                {
-                    Text:'Det var riktigt kul emd andra ord',
-                    Date:'2019-02-23',
-                    Who:'12kshfds2'
-                },
-                {
-                    Text:'Det var riktigt kul emd andra ord',
-                    Date:'2019-02-23',
-                    Who:'12kshfds2'
-                }
-            ]
+            Chatts:[]
         }
 
         this.NewChattBubble=this.NewChattBubble.bind(this);
+
+        this.ChattsColl=db.firestore().collection('/Chatts/');        
+    }
+
+
+    componentWillMount(){
+        this.unsubscribe=this.ChattsColl.orderBy('TimeStamp','desc').onSnapshot(docSnaps=>{
+            console.log('returns value')
+            const newChatts=docSnaps.docs.map(doc=>{
+                return doc.data();
+            })
+
+            this.setState({
+                Chatts:newChatts
+            })
+        })
+    }
+
+
+    componentWillUnmount(){
+        if(this.unsubscribe){
+            this.unsubscribe();
+        }
     }
 
 
@@ -50,8 +49,8 @@ export class Chatt extends Component{
     NewChattBubble(text){
         const newBubble={
             Text:text,
-            Date:new Date(),
-            Who:'12kshfds2'
+            TimeStamp:new Date().getTime(),
+            Who:'12kshfds2',
         }
 
         const newChatts = this.state.Chatts;
@@ -60,6 +59,8 @@ export class Chatt extends Component{
         this.setState({
             Chatts:newChatts
         })
+
+        this.ChattsColl.add(newBubble);
     }
 
 

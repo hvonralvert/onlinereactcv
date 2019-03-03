@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {DeleteButton} from '../../components/buttons/delete';
+import {DeleteButton} from '../buttons/delete';
 
 import './infobox.css';
 

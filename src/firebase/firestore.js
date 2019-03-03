@@ -12,4 +12,5 @@ const config = {
 
  var db=firebase;
 
- export default db;
+export default db;
+

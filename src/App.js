@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 class App extends Component {
 
   constructor(){
+    console.log('construcotr in app.js')
     super();
 
     this.state={
@@ -39,7 +40,7 @@ class App extends Component {
           Link:'/OtherPage'
         }
       ],
-      OpenLoginModal:true
+      OpenLoginModal:false
     }
 
     this.GoToPage=this.GoToPage.bind(this);
