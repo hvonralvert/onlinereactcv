@@ -1,0 +1,115 @@
+/*----------------------  main tables stuff -------------*/
+.parents-container {
+    width: 300px;
+    border-spacing: 0px;
+    border-top:1px solid gray;
+}
+
+
+.parents-container tr:nth-child(odd) {
+    /* background-color: rgb(245, 245, 245); */
+    background-image: url(/assets/forest.jpg),url(/assets/horses.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    /* background-blend-mode: lighten; */
+    /* background-color: blue; */
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-name: animatemybackground;
+    animation-timing-function: linear;
+}
+
+
+@keyframes animatemybackground{
+    0% {
+        background-position:0px 0px;
+    }
+    50% {
+        background-position: 200px 0px;
+    }
+    100% {
+        background-position:0px 0px;
+    }
+}
+
+
+.parents-container td, .parents-container th {
+    /* border-right:1px solid gray; */
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border-bottom:1px solid gray;
+    border-right:1px solid gray;
+}
+
+
+.parents-container td:first-child, .parents-container th:first-child{
+    border-left:1px solid gray;
+}
+
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+}
+
+
+.parent-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.parent-name {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+
+.children-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.child-name {
+    margin-left: 50px;
+    font-size: 15px;
+}
+
+
+.child-name:nth-child(2) {
+    background-color: rgb(233, 255, 233);
+    width: 30px;
+}
+
+
+ul .child-name[rocking=no] {
+    /*- alla som matchar detta-*/
+    background-color: rgb(185, 255, 240);
+}
+
+
+/*------------------button ------------------*/
+.other-button{
+    position: absolute;
+    padding:7px;
+    font-size:15px;
+    background-color: green;
+    color:white;
+    top:10px;
+    left:10px;
+}
+
+.other-button:hover{
+    background-color: rgb(66, 144, 42);
+}
+
+
+.other-button-running{
+    background-color: red;
+}
