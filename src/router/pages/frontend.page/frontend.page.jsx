@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import InfoBox from '../../../components/infobox/infobox';
 
+import '../../../styles/app.styles.css';
+
 class FrontEndPage extends Component {
 
     constructor(){
@@ -22,7 +24,7 @@ class FrontEndPage extends Component {
         const history=this.state.History;
 
         return (
-            <div className="page-container">
+            <div className="page-container centerPos">
                 <InfoBox BoxData={history}></InfoBox>
             </div>
         )

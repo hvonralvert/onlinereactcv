@@ -27,7 +27,6 @@ export class ButtonStandard extends Component{
 
 
     render(){
-
         const clickFunct=this.props.clickFunct;
         const disabled=this.props.disable;
 

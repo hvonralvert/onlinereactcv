@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './login.css';
+import './login.modal.css';
 import db from '../../firebase/firestore';
 
 import { ButtonStandard } from '../../components/buttons/button.standard';

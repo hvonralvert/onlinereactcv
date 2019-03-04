@@ -26,7 +26,7 @@ export class Chatt extends Component{
 
     componentWillMount(){
         this.unsubscribe=this.ChattsColl.orderBy('TimeStamp','desc').onSnapshot(docSnaps=>{
-            console.log('returns value')
+            console.log('firebase returns values');
             const newChatts=docSnaps.docs.map(doc=>{
                 return doc.data();
             })
@@ -43,7 +43,6 @@ export class Chatt extends Component{
             this.unsubscribe();
         }
     }
-
 
 
     NewChattBubble(text){

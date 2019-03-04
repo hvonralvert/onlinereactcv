@@ -7,7 +7,7 @@ import ChattPage from './router/pages/chatt.page/chatt.page';
 import FrontEndPage from './router/pages/frontend.page/frontend.page';
 import { OtherPage } from './router/pages/other.page/other.page';
 
-import { LoginModal } from './modals/login/login';
+import { LoginModal } from './modals/login.modal/login.modal';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 

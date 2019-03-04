@@ -41,8 +41,7 @@ export class ChattContent extends Component{
             return<div className="chatt-content"></div>;
         }
 
-        const ChattsRows=Chatts.map((element,index) => {
-
+        const ChattsRows = Chatts.map((element,index) => {
             return(    
                 <div key={index} className={"bubble-row " + (this.isEven(index) ? "rightPos":"leftPos")}>
                     <img src='./assets/mig.jpg' className="img-bubble"></img>  
@@ -53,7 +52,7 @@ export class ChattContent extends Component{
             )
         });
 
-        return <div  className="chatt-content">{ChattsRows}</div>        
+        return <div className="chatt-content">{ChattsRows}</div>        
     }
 
 
