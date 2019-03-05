@@ -21,3 +21,19 @@
     align-items: flex-end;
 }
 
+
+
+/*-----------test cv--------*/
+.CV-mainpage-wrapper{
+    position: static;    
+}
+
+.CV-mainpage-container{
+    position: absolute;
+    width:100vw;
+    height:100vh;
+    background-color: white;
+    z-index: 999;
+}
+
+

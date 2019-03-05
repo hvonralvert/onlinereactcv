@@ -58,10 +58,11 @@ export class ChattContent extends Component{
 
     render(){
         const Chatts=this.props.Chatts;
+        const ChattBubbles=this.ChattBubbles;
 
         return(
             <div ref={ (el)=> {this.el = el}} className="chatt-content-container">
-                <this.ChattBubbles Chatts={Chatts}></this.ChattBubbles>
+                <ChattBubbles Chatts={Chatts}></ChattBubbles>
             </div>
         )
     }

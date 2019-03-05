@@ -1,0 +1,37 @@
+@media print {
+    .print-wrapper{
+        /* background-color: green; */
+    }
+
+    .print-container{
+        font-size: 11pt;
+        width:595pt;
+        min-height:842pt;
+        background-color: bisque;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    .print-col-left{
+        display: inline-block;
+        background-color: blue;
+        height:100%;
+        width:30%;
+    }
+
+    .print-col-right{
+        display: inline-block;
+        background-color: red;
+        height:100%;
+        width:70%;
+    }
+
+
+}
+
+
+.iframe-container{
+    position: absolute;
+    height:0px;
+    width:0px;
+}

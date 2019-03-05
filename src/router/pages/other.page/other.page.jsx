@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './../../../styles/app.styles.css';
 import './other.page.css';
-import { resolve } from 'q';
 
 export class OtherPage extends Component {
 
@@ -210,7 +209,7 @@ export class OtherPage extends Component {
 
         const childRows = children.map((child, index) => {
             return (
-                <li key={index.toString()} rocking="no" className="child-name">
+                <li key={index} rocking="no" className="child-name">
                     {child.Name}
                 </li>
             )
